@@ -5,7 +5,6 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.effect.ImageInput?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -20,11 +19,12 @@
       <SplitPane dividerPositions="0.2140468227424749" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0">
         <items>
           <AnchorPane minHeight="100.0" minWidth="0.0" prefHeight="194.0" prefWidth="798.0" style="-fx-background-color: #ffffff;">
-               <children><ImageView fitHeight="100.0" fitWidth="100.0" layoutX="14.0" layoutY="13.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
-                   <image>
-                       <Image url="@../image/logo.png" />
-                   </image>
-               </ImageView>
+               <children>
+                   <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="14.0" layoutY="13.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                       <image>
+                           <Image url="@../image/logo.png" />
+                       </image>
+                   </ImageView>
                   <Pane layoutX="115.0" layoutY="9.0" minHeight="100.0" prefHeight="110.0" prefWidth="309.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="115.0" AnchorPane.topAnchor="10.0">
                      <children>
                         <GridPane layoutX="14.0" layoutY="50.0" prefHeight="52.0" prefWidth="300.0">
@@ -61,17 +61,17 @@
                         </Label>
                      </children>
                   </Pane>
-                   <MenuButton layoutX="714.0" layoutY="28.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="57.0" textAlignment="CENTER">
+                   <MenuButton layoutX="720.0" layoutY="9.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="43.0" textAlignment="CENTER">
                        <items>
-                           <MenuItem fx:id="home" onAction="#handleOnClickHomeMenuItem" mnemonicParsing="false" text="Home">
+                           <MenuItem mnemonicParsing="false" text="Home">
                            <graphic>
                               <ImageView fitHeight="26.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../image/Home.png" />
+                                    <Image url="@../image/home.jpg" />
                                  </image>
                               </ImageView>
                            </graphic></MenuItem>
-                           <MenuItem fx:id="calendar" onAction="#handleOnClickCalendarMenuItem" mnemonicParsing="false" text="Calendar">
+                           <MenuItem mnemonicParsing="false" text="Calendar">
                            <graphic>
                               <ImageView fitHeight="26.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -79,7 +79,7 @@
                                  </image>
                               </ImageView>
                            </graphic></MenuItem>
-                           <MenuItem fx:id="logout" onAction="#handleOnClickLogOutMenuItem" mnemonicParsing="false" text="Log Out">
+                           <MenuItem mnemonicParsing="false" text="Log Out">
                            <graphic>
                               <ImageView fitHeight="26.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -89,7 +89,7 @@
                            </graphic></MenuItem>
                        </items>
                      <graphic>
-                        <ImageView fitHeight="26.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="20.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../image/Gear.png" />
                            </image>

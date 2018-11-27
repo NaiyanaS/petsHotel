@@ -54,8 +54,6 @@ public class LoginDataController extends DatabaseConnection {
     }
 
 
-
-
     public void getData() {
         try {
             connect();

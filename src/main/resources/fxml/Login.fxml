@@ -90,13 +90,13 @@
                               </Label>
                            </children>
                         </GridPane>
+                        <Button fx:id="loginBtn" layoutX="168.0" layoutY="141.0" mnemonicParsing="false" onAction="#loginAction" onMouseClicked="#handleOnClickLoginButton" style="-fx-background-color: #99CCFF; -fx-border-color: #007FFF; -fx-border-radius: 5;" text="Login" textAlignment="CENTER" textFill="#0066cc">
+                           <font>
+                              <Font name="Angsana New Bold" size="20.0" />
+                           </font>
+                        </Button>
                      </children>
                   </Pane>
-                  <Button fx:id="loginBtn" onMouseClicked="#handleOnClickLoginButton" layoutX="366.0" layoutY="366.0" mnemonicParsing="false" onAction="#loginAction" style="-fx-background-color: #99CCFF; -fx-border-color: #007FFF; -fx-border-radius: 5;" text="Login" textAlignment="CENTER" textFill="#0066cc">
-                     <font>
-                        <Font name="Angsana New Bold" size="20.0" />
-                     </font>
-                  </Button>
                </children>
             </AnchorPane>
         </items>

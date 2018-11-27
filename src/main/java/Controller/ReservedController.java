@@ -1,10 +1,5 @@
 package Controller;
 
-import Controller.dataController.BookingDataController;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
-import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,10 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import java.util.function.Predicate;
-
-public class CounterPageController {
-    final ObservableList<BookingDataController> data = FXCollections.observableArrayList();
+public class ReservedController {
     @FXML protected MenuItem home;
     @FXML protected MenuItem calendar;
     @FXML protected MenuItem logout;
@@ -24,22 +16,30 @@ public class CounterPageController {
     @FXML protected Button salonBtn;
     @FXML protected Button serviceBtn;
     @FXML protected Button stockBtn;
-    @FXML protected Button addBtn;
-    @FXML protected Button reserveBtn;
-    @FXML protected Button searchBtn;
-    @FXML protected TextField searchTextField;
-    @FXML protected TableView table;
-    @FXML protected Button reserveBtnOnTopPage;
-    @FXML protected Button checkInBtn;
-    @FXML protected Button checkOutBtn;
-    @FXML protected Button roomBtn;
-
+    //Tab
+    @FXML protected Tab insertDetail;
+    @FXML protected Tab chooseRooms;
+    @FXML protected Tab confirmDetail;
+    // insertDetail
+    @FXML protected ChoiceBox petName;
+    @FXML protected ChoiceBox foodName;
+    @FXML protected RadioMenuItem choosePro;
+    @FXML protected Button addMorePets;
+    //chooseRooms
+    @FXML protected ComboBox typeRooms;
+    @FXML protected Button typeA;
+    @FXML protected Button typeB;
+    @FXML protected Button typeC;
+    @FXML protected Button typeD;
+    @FXML protected Button typeE;
+    @FXML protected Button nextBtn; // อาจไม่จำเป็นต้องใช้
+    // confirmDetail
+    @FXML protected TextArea allDetails;
 
     @FXML protected void number(ActionEvent e){
         System.out.println("1");
     }
-
-    //Button On Top
+    // Button on top
     @FXML protected void handleOnClickHomeMenuItem(ActionEvent e) throws Exception{
         Button button = (Button) e.getSource();
         Stage stage = (Stage) button.getScene().getWindow();
@@ -61,17 +61,8 @@ public class CounterPageController {
         stage.show();
 
     }
-    @FXML protected void handleOnClickReserveBtnOnTopPage(ActionEvent e) throws Exception{
-        Button button = (Button) e.getSource();
-        Stage stage = (Stage) button.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/CounterPage.fxml"));
-        stage.setScene(new Scene(loader.load()));
 
-        stage.show();
-
-    }
-
-    //Button at Left side
+    // Button at Left side
     @FXML protected void handleOnClickCounterBtn(ActionEvent e) throws Exception{
         Button button = (Button) e.getSource();
         Stage stage = (Stage) button.getScene().getWindow();
@@ -107,33 +98,18 @@ public class CounterPageController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/StockPage.fxml"));
         stage.setScene(new Scene(loader.load()));
         stage.show();}
-        //Button on center
-    @FXML protected void handleSearchfield(ActionEvent e){
-        FilteredList<BookingDataController> filteredData = new FilteredList<>(data, even -> true );
-        searchTextField.setOnKeyReleased(event ->{
-            searchTextField.textProperty().addListener(((observable, oldValue, newValue) ->
-                    filteredData.setPredicate((Predicate<? super BookingDataController>) user ->{
-                        if (newValue == null || newValue.isEmpty()){return  true;}
-                         if (user.getCustomers().contains(newValue)){return  true;}
-                         return false;
-                    })
-                    ));
-            SortedList<BookingDataController> sortedData = new SortedList<>(filteredData);
-            sortedData.comparatorProperty().bind(table.comparatorProperty());
-            table.setItems(sortedData);
-        });
-    }
-    @FXML protected void handleOnClickAddBtn(ActionEvent e){
 
-        //add
-    }
-    @FXML protected void handleOnClickReserveBtn(ActionEvent e){
-        //go to reserve Room
+        // Button on center
+    //insert detail tab
+        @FXML protected void handleOnClick(ActionEvent e) throws Exception{
 
-    }
+            Button button = (Button) e.getSource();
+            Stage stage = (Stage) button.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/Login.fxml"));
+            stage.setScene(new Scene(loader.load()));
+            stage.show();
 
-
-
+        }
 
 
 }

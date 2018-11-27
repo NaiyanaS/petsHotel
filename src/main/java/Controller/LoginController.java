@@ -12,33 +12,32 @@ import java.io.IOException;
 import java.rmi.server.ExportException;
 
 public class LoginController {
-    @FXML
-    protected TextField username;
-    @FXML
-    protected TextField password;
-    @FXML
-    protected Button loginBtn;
+    @FXML protected TextField username;
+    @FXML protected TextField password;
+    @FXML protected Button loginBtn;
     //private LoginDataController logInDB;
-    @FXML
-    protected void loginAction(ActionEvent e)  {
+    @FXML protected void loginAction(ActionEvent e)  {
         System.out.println(username.getCharacters());
         System.out.println(password.getCharacters());
     }
     @FXML
     protected void  handleOnClickLoginButton(ActionEvent e) throws Exception {
-        //if(username.getText().equals(logInDB.getUsernames())&& password.getText().equals(logInDB.getPassword(username.toString()))){
-            Button b = (Button) e.getSource();
-            Stage stage = (Stage) b.getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/Home.fxml"));
-            //try {
-            stage.setScene(new Scene(loader.load()));
-            stage.show();
-
-//            } catch (IOException e1) {
-//                e1.printStackTrace();
-//            }
-       // }
-
-        //else{stage.setText("Username or Password is wrong!!! \n Please Try again.")}
+//        //if(username.getText().equals(logInDB.getUsernames())&& password.getText().equals(logInDB.getPassword(username.toString()))){
+//            Button b = (Button) e.getSource();
+//            Stage stage = (Stage) b.getScene().getWindow();
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/Home.fxml"));
+//            //try {
+//            stage.setScene(new Scene(loader.load()));
+//            stage.show();
+//
+////            } catch (IOException e1) {
+////                e1.printStackTrace();
+////            }
+//       // }
+//
+//        //else{Alert alertMessage = new Alert(Alert.AlertType.WARNING);
+//        //                alertMessage.setHeaderText(null);
+//        //                alertMessage.setContentText"Username or Password is wrong!!! \n Please Try again.");
+//        //                alertMessage.showAndWait();(}
     }
 }
