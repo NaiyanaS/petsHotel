@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.rmi.server.ExportException;
 
 public class LoginController {
     @FXML
@@ -24,20 +25,20 @@ public class LoginController {
         System.out.println(password.getCharacters());
     }
     @FXML
-    protected void  handleOnClickLoginButton(ActionEvent e){
+    protected void  handleOnClickLoginButton(ActionEvent e) throws Exception {
         //if(username.getText().equals(logInDB.getUsernames())&& password.getText().equals(logInDB.getPassword(username.toString()))){
             Button b = (Button) e.getSource();
-
             Stage stage = (Stage) b.getScene().getWindow();
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/Home.fxml"));
-            try {
-                stage.setScene(new Scene(loader.load()));
-                stage.show();
+            //try {
+            stage.setScene(new Scene(loader.load()));
+            stage.show();
 
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
+//            } catch (IOException e1) {
+//                e1.printStackTrace();
+//            }
        // }
+
+        //else{stage.setText("Username or Password is wrong!!! \n Please Try again.")}
     }
 }
